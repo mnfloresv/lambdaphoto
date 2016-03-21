@@ -1,0 +1,27 @@
+Usage: lamdaphoto [options] source [target]
+Sort photos in the 'source' directory, replacing the patterns in the 'target' path with EXIF metadata.
+
+Options:
+  -c  --copy     Copy photos (default)
+  -m  --move     Move photos
+  -r  --rec      Recursive (default)
+  -n  --norec    Non recursive
+  -h  --help     Show this help
+  -v  --version  Show version information
+
+Patterns:
+  %make    Camera manufacturer
+  %model   Camera model
+  %date    Full date (yyyy-mm-dd)
+  %year    Year
+  %month   Month
+  %day     Day of the month
+
+Examples:
+  lambdaphoto /media/camera myphotos
+  lambdaphoto /media/camera myphotos/%make-%model/%year/%date
+  lambdaphoto --move myphotos myphotos/%year/%month/%day
+
+WARNING! This tool is in beta and may mess your photos,
+please make sure you have a backup specially in --move mode.
+
